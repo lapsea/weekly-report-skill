@@ -1,0 +1,7 @@
+interface:
+  display_name: "视觉周报"
+  short_description: "将一周材料整理为可演示的移动端周报 HTML"
+  default_prompt: "Use $weekly-report-html to turn this week's materials into a self-contained visual weekly report."
+
+policy:
+  allow_implicit_invocation: true
