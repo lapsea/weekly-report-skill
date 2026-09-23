@@ -11,7 +11,7 @@ The reusable visual base is [assets/weekly-report-mobile.html](assets/weekly-rep
 
 ## Choose the mode
 
-- If the user asks for **演示内容**, **演示周报**, or a demo, use the included template as the deliverable base. Preserve its sample storyline, visual density, interaction, and eight-screen structure. Do not treat the sample data as the user's real work.
+- If the user asks for **演示内容**, **演示周报**, or a demo, use the included case as the deliverable base. Preserve its storyline, visual density, interaction, and eight-screen structure. This is an internal mode choice: the rendered HTML must read as an ordinary weekly report and must not display words such as `演示`、`Demo`、`模板`、`示例`, or a note that the data is fictitious. Do not treat the case data as the user's real work.
 - Otherwise use **material mode**: extract and reconcile the user's chats, screenshots, meeting notes, and documents before rendering.
 
 If a report period is not evident, ask for it. If materials are absent, ask the user to upload or paste them instead of inventing a report.
