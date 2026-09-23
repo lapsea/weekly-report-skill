@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light" />
-<title>工作周报 · W39</title>
+<title>工作周报 · W37</title>
 <style>
   :root {
     --bg:      oklch(99% 0.002 240);
@@ -15,8 +15,6 @@
     --accent:  oklch(58% 0.18 255);
 
     --stage:   oklch(96.5% 0.005 250);
-    --shell:   oklch(15% 0.01 250);
-
     --ok:      oklch(56% 0.14 155);
     --warn:    oklch(62% 0.13 75);
     --danger:  oklch(55% 0.2 25);
@@ -82,7 +80,7 @@
   .screen {
     flex: 0 0 100%;
     width: 100%; height: 100%;
-    padding: 96px 24px 92px;
+    padding: 46px 16px 58px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -95,35 +93,6 @@
     transition: opacity 0.42s ease var(--d, 0s), transform 0.42s ease var(--d, 0s);
   }
   .screen.active .fx { opacity: 1; transform: none; }
-
-  .statusbar {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 54px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 26px 0;
-    z-index: 20;
-    pointer-events: none;
-  }
-  .sb-time {
-    font-family: var(--font-mono);
-    font-size: 13.5px;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    font-variant-numeric: tabular-nums;
-  }
-  .sb-island {
-    position: absolute;
-    top: 11px; left: 50%;
-    transform: translateX(-50%);
-    width: 118px; height: 34px;
-    background: var(--shell);
-    border-radius: 20px;
-  }
-  .sb-icons { display: flex; align-items: center; gap: 5px; color: var(--fg); }
-  .sb-icons svg { display: block; }
 
   .pager {
     position: absolute;
@@ -145,17 +114,6 @@
   }
   .dot:hover { background: color-mix(in oklch, var(--fg) 42%, transparent); }
   .dot.on { width: 22px; background: var(--fg); }
-
-  .homebar {
-    position: absolute;
-    bottom: 9px; left: 50%;
-    transform: translateX(-50%);
-    width: 134px; height: 5px;
-    border-radius: 999px;
-    background: color-mix(in oklch, var(--fg) 86%, transparent);
-    z-index: 20;
-    pointer-events: none;
-  }
 
   .navbtn {
     position: fixed;
@@ -211,7 +169,7 @@
   .s-title {
     margin: 0;
     font-family: var(--font-display);
-    font-size: 27px;
+    font-size: 30px;
     font-weight: 700;
     letter-spacing: -0.015em;
     line-height: 1.15;
@@ -220,7 +178,7 @@
   .s-head-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
   .s-count {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 11.5px;
     letter-spacing: 0.06em;
     color: var(--muted);
     font-variant-numeric: tabular-nums;
@@ -293,8 +251,8 @@
   .cm-v .num { font-family: var(--font-mono); font-size: 13px; }
   .cover-note {
     position: absolute;
-    left: 24px; right: 24px;
-    bottom: 76px;
+    left: 16px; right: 16px;
+    bottom: 58px;
     font-family: var(--font-mono);
     font-size: 10.5px;
     letter-spacing: 0.08em;
@@ -306,17 +264,17 @@
     grid-template-columns: 1fr 1fr;
     gap: 12px;
   }
-  .stat-card { padding: 16px 16px 14px; }
+  .stat-card { padding: 14px 14px 13px; }
   .stat-num {
     font-family: var(--font-mono);
-    font-size: 31px;
+    font-size: 34px;
     font-weight: 600;
     line-height: 1;
     letter-spacing: -0.02em;
     font-variant-numeric: tabular-nums;
   }
-  .stat-label { margin-top: 8px; font-size: 12.5px; font-weight: 550; }
-  .stat-sub { margin-top: 4px; font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .stat-label { margin-top: 8px; font-size: 13.5px; font-weight: 550; }
+  .stat-sub { margin-top: 4px; font-size: 11.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
   .delta-up { color: var(--ok-ink); font-weight: 600; }
   .t-warn { color: var(--warn-ink); font-weight: 600; }
   .t-danger { color: var(--danger-ink); font-weight: 600; }
@@ -336,9 +294,9 @@
   .seg-3 { background: color-mix(in oklch, var(--fg) 32%, transparent); }
   .seg-4 { background: color-mix(in oklch, var(--fg) 15%, transparent); }
   .legend { margin-top: 14px; display: grid; gap: 9px; }
-  .legend-row { display: flex; align-items: center; gap: 9px; font-size: 12.5px; }
+  .legend-row { display: flex; align-items: center; gap: 9px; font-size: 13.5px; }
   .l-dot { width: 8px; height: 8px; border-radius: 3px; flex: none; }
-  .legend-row .l-val { margin-left: auto; font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .legend-row .l-val { margin-left: auto; font-family: var(--font-mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
   .legend-row .l-val b { color: var(--fg); font-weight: 600; }
 
   .group-label {
@@ -358,8 +316,8 @@
   }
   .done:last-child { border-bottom: 0; }
   .done-ic { flex: none; margin-top: 1px; color: var(--ok); }
-  .done-t { font-size: 14px; font-weight: 600; letter-spacing: -0.005em; line-height: 1.35; }
-  .done-s { margin-top: 3px; font-size: 12px; color: var(--muted); line-height: 1.45; }
+  .done-t { font-size: 15.5px; font-weight: 600; letter-spacing: -0.005em; line-height: 1.35; }
+  .done-s { margin-top: 3px; font-size: 13px; color: var(--muted); line-height: 1.45; }
   .done .tag { margin-left: auto; flex: none; }
 
   .tag {
@@ -376,10 +334,10 @@
     white-space: nowrap;
   }
 
-  .proj { padding: 16px; }
+  .proj { padding: 14px; }
   .proj + .proj { margin-top: 12px; }
   .proj-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-  .proj-name { font-size: 14.5px; font-weight: 650; letter-spacing: -0.005em; }
+  .proj-name { font-size: 15.5px; font-weight: 650; letter-spacing: -0.005em; }
   .chip {
     display: inline-flex;
     align-items: center;
@@ -409,12 +367,12 @@
     width: 38px;
     text-align: right;
   }
-  .proj-note { margin-top: 11px; font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .proj-note { margin-top: 11px; font-size: 13px; color: var(--muted); line-height: 1.5; }
 
-  .risk { padding: 15px 16px 13px; }
+  .risk { padding: 14px 14px 12px; }
   .risk + .risk { margin-top: 12px; }
   .risk-head { display: flex; align-items: center; gap: 10px; }
-  .risk-title { font-size: 14.5px; font-weight: 650; letter-spacing: -0.005em; }
+  .risk-title { font-size: 15.5px; font-weight: 650; letter-spacing: -0.005em; }
   .risk-rows { margin-top: 11px; display: grid; gap: 7px; }
   .r-row { display: flex; gap: 10px; align-items: baseline; }
   .r-label {
@@ -425,7 +383,7 @@
     letter-spacing: 0.1em;
     color: var(--muted);
   }
-  .r-text { font-size: 12.5px; line-height: 1.5; }
+  .r-text { font-size: 13.5px; line-height: 1.5; }
   .risk-meta {
     margin-top: 11px;
     padding-top: 10px;
@@ -487,38 +445,38 @@
   .p0 { background: var(--accent-ink); color: var(--surface); }
   .p1 { background: transparent; color: var(--fg); border: 1px solid color-mix(in oklch, var(--fg) 45%, transparent); }
   .p2 { background: transparent; color: var(--muted); border: 1px solid var(--border); }
-  .plan-t { font-size: 14px; font-weight: 600; line-height: 1.4; letter-spacing: -0.005em; }
-  .plan-s { margin-top: 3px; font-size: 12px; color: var(--muted); }
+  .plan-t { font-size: 15.5px; font-weight: 600; line-height: 1.4; letter-spacing: -0.005em; }
+  .plan-s { margin-top: 3px; font-size: 13px; color: var(--muted); }
   .plan-d { margin-left: auto; flex: none; font-family: var(--font-mono); font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; margin-top: 3px; }
 
   .mt-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 14px; }
-  .mt-name { font-size: 14.5px; font-weight: 650; letter-spacing: -0.005em; }
+  .mt-name { font-size: 15.5px; font-weight: 650; letter-spacing: -0.005em; }
   .mt-info { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .mt-note { padding: 13px 16px 14px; border-left: 2px solid var(--accent); }
+  .mt-note { padding: 12px 14px 13px; border-left: 2px solid var(--accent); }
   .mt-note-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--muted); margin-bottom: 7px; }
-  .mt-note-text { margin: 0; font-size: 13px; line-height: 1.68; }
+  .mt-note-text { margin: 0; font-size: 14px; line-height: 1.62; }
   .mt-label { margin: 20px 0 4px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.14em; color: var(--muted); }
   .mt-dec { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); }
   .mt-dec:last-child { border-bottom: 0; }
   .mt-dec-mark { flex: none; width: 6px; height: 6px; margin-top: 7px; border-radius: 2px; background: var(--fg); }
-  .mt-dec-t { font-size: 13.5px; line-height: 1.5; }
+  .mt-dec-t { font-size: 14.5px; line-height: 1.5; }
   .mt-task { display: flex; align-items: baseline; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--border); }
   .mt-task:last-child { border-bottom: 0; }
   .mt-owner { flex: none; font-size: 13px; font-weight: 700; }
-  .mt-task-t { font-size: 13px; }
+  .mt-task-t { font-size: 14px; }
   .mt-task-d { margin-left: auto; flex: none; font-family: var(--font-mono); font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
 
   .quote-s {
     margin: 6px 0 0;
-    font-size: 17.5px;
+    font-size: 19px;
     font-weight: 600;
     line-height: 1.68;
     letter-spacing: -0.005em;
     text-wrap: balance;
   }
-  .need-card { margin-top: 26px; padding: 16px; }
+  .need-card { margin-top: 24px; padding: 14px; }
   .need-label { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.14em; color: var(--muted); margin-bottom: 8px; }
-  .need-text { font-size: 13.5px; line-height: 1.6; }
+  .need-text { font-size: 14.5px; line-height: 1.55; }
   .sync-row {
     margin-top: 22px;
     display: flex;
@@ -552,14 +510,14 @@
       <div class="track" id="track">
 
         <section class="screen cover active" id="s-cover" data-od-id="screen-cover" data-label="封面" aria-label="封面">
-          <span class="flourish" aria-hidden="true">39</span>
+          <span class="flourish" aria-hidden="true">37</span>
           <div class="fx" style="--d:0s">
-            <span class="cover-pill">WEEKLY REPORT · 第 39 周</span>
+            <span class="cover-pill">WEEKLY REPORT · 第 37 周</span>
             <h1 class="cover-title">工作周报</h1>
             <p class="cover-sub">增长产品线 · 产品研发组</p>
           </div>
           <div class="cover-meta fx" style="--d:0.08s">
-            <div class="cm-row"><span class="cm-k">周期</span><span class="cm-v"><span class="num">2026.09.21 — 09.27</span></span></div>
+            <div class="cm-row"><span class="cm-k">周期</span><span class="cm-v"><span class="num">2026.09.07 — 09.13</span></span></div>
             <div class="cm-row"><span class="cm-k">汇报人</span><span class="cm-v">产品组 · 李然</span></div>
             <div class="cm-row"><span class="cm-k">同步给</span><span class="cm-v">研发中心 · 全组</span></div>
           </div>
@@ -571,7 +529,7 @@
             <p class="kicker"><span class="k-idx">01</span>本周概览</p>
             <div class="s-head-row">
               <h2 class="s-title">一周全景</h2>
-              <span class="s-count">W39</span>
+              <span class="s-count">W37</span>
             </div>
           </header>
           <div class="stat-grid fx" style="--d:0.06s">
@@ -782,13 +740,13 @@
             </div>
           </header>
           <div class="week fx" style="--d:0.04s" role="img" aria-label="下周日历,周三与周五有 P0 任务">
-            <div class="wd"><span class="wd-dow">一</span><span class="wd-date">21</span></div>
-            <div class="wd"><span class="wd-dow">二</span><span class="wd-date">22</span></div>
-            <div class="wd wd-p0"><span class="wd-dow">三</span><span class="wd-date">23</span></div>
-            <div class="wd"><span class="wd-dow">四</span><span class="wd-date">24</span></div>
-            <div class="wd wd-p0"><span class="wd-dow">五</span><span class="wd-date">25</span></div>
-            <div class="wd"><span class="wd-dow">六</span><span class="wd-date">26</span></div>
-            <div class="wd"><span class="wd-dow">日</span><span class="wd-date">27</span></div>
+            <div class="wd"><span class="wd-dow">一</span><span class="wd-date">14</span></div>
+            <div class="wd"><span class="wd-dow">二</span><span class="wd-date">15</span></div>
+            <div class="wd wd-p0"><span class="wd-dow">三</span><span class="wd-date">16</span></div>
+            <div class="wd"><span class="wd-dow">四</span><span class="wd-date">17</span></div>
+            <div class="wd wd-p0"><span class="wd-dow">五</span><span class="wd-date">18</span></div>
+            <div class="wd"><span class="wd-dow">六</span><span class="wd-date">19</span></div>
+            <div class="wd"><span class="wd-dow">日</span><span class="wd-date">20</span></div>
           </div>
           <p class="week-note fx" style="--d:0.05s">● 标记为含 P0 节点 · 节选 5 项</p>
           <div class="fx" style="--d:0.1s">
@@ -825,7 +783,7 @@
             <p class="kicker"><span class="k-idx">07</span>小结</p>
             <div class="s-head-row">
               <h2 class="s-title">小结与协同</h2>
-              <span class="s-count">W39</span>
+              <span class="s-count">W37</span>
             </div>
           </header>
           <p class="quote-s fx" style="--d:0.06s">本周主线全部兑现,增长中台进入数据观察期;支付网关联调是下周唯一硬节点。</p>
@@ -837,23 +795,12 @@
             <span class="sync-k">下次同步</span>
             <span class="sync-v">周一 10:00 站会 · 纪要随周报发出</span>
           </div>
-          <div class="endmark fx" style="--d:0.2s">W39 · 完</div>
+          <div class="endmark fx" style="--d:0.2s">W37 · 完</div>
         </section>
 
       </div>
 
-      <header class="statusbar" aria-hidden="true">
-        <span class="sb-time">9:41</span>
-        <span class="sb-island"></span>
-        <span class="sb-icons">
-          <svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4.5" y="5" width="3" height="6" rx="1"/><rect x="9" y="2.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="0" width="3" height="11" rx="1"/></svg>
-          <svg width="15" height="11" viewBox="0 0 15 11" fill="currentColor"><path d="M7.5 9.2a1.4 1.4 0 100 2.8 1.4 1.4 0 000-2.8z" transform="translate(0 -1.2)"/><path d="M7.5 5.4c1.5 0 2.9.6 3.9 1.6l-1.3 1.3a3.7 3.7 0 00-5.2 0L3.6 7a5.5 5.5 0 013.9-1.6z"/><path d="M7.5 1.5c2.6 0 4.9 1 6.6 2.7l-1.3 1.3a7.5 7.5 0 00-10.6 0L.9 4.2A9.3 9.3 0 017.5 1.5z"/></svg>
-          <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="currentColor" opacity="0.4"/><rect x="2" y="2" width="15" height="8" rx="2" fill="currentColor"/><path d="M23.5 4v4a2.2 2.2 0 000-4z" fill="currentColor" opacity="0.4"/></svg>
-        </span>
-      </header>
-
       <nav class="pager" id="dots" aria-label="页面导航" data-od-id="pager"></nav>
-      <div class="homebar" aria-hidden="true"></div>
     </div>
   </div>
 

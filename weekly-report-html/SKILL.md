@@ -7,7 +7,7 @@ description: Turn a week's chats, screenshots, meeting notes, and loose document
 
 Create a fact-grounded weekly report that is pleasant to review on a phone and strong enough to show in a product demo. The primary reader is the person who supplied the materials, so use first-person wording unless they request a team or third-person voice.
 
-The reusable visual base is [assets/weekly-report-mobile.html](assets/weekly-report-mobile.html). It is fully self-contained and includes the intended mobile pager, keyboard navigation, and drag navigation. It is an unframed app page, not a simulated phone device.
+The reusable visual base is [assets/weekly-report-mobile.html](assets/weekly-report-mobile.html). It is fully self-contained and includes the intended mobile pager, keyboard navigation, and drag navigation. It is an unframed app page, not a simulated phone device or system interface.
 
 ## Choose the mode
 
@@ -59,7 +59,7 @@ Start with the existing eight-section narrative and keep sections that have mate
 
 The report is not limited to eight screens. Split dense completed items by project, projects into additional screens, risks into continuation screens, or meetings into separate screens when that improves legibility. Renumber the visible section indexes, page labels, and pager total to match the actual screen count.
 
-Make the opening and overview visually strong: clear report period, a short self-review headline, meaningful totals, and only verified summary counts. Retain the template's restrained palette, large spacing, rounded cards, animations, and swipe/keyboard/dot navigation. Keep the output as an unframed full-screen app page; do not add a simulated phone bezel, outer padding, or device shadow. Adapt layout rather than shrinking text below readability.
+Make the opening and overview visually strong: clear report period, a short self-review headline, meaningful totals, and only verified summary counts. Retain the template's restrained palette, large spacing, rounded cards, animations, and swipe/keyboard/dot navigation. Keep the output as an unframed full-screen app page; do not add a simulated phone bezel, outer padding, device shadow, status bar, dynamic island, or Home indicator. Adapt layout rather than shrinking text below readability.
 
 ## Render and deliver
 
